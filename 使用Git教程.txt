@@ -1,95 +1,95 @@
-һ��ǰ��׼����
-��¼Git��վ��ע��Git�˻���ע�⣺�˻������������Ҫ����������֣���Ȼ���¼
+一、前期准备：
+登录Git网站，注册Git账户（注意：账户名和邮箱很重要，起个好名字），然后登录
 
-������װGit���
-1.��¼��msysgit.github.io�����غ��Լ����԰汾��ͬ������
-2.��װʱ����һ���󷨣�ע������ѡ��Use git from git bash only..,
+二、安装Git插件
+1.登录：msysgit.github.io，下载和自己电脑版本相同的软件
+2.安装时，下一步大法，注意其中选择Use git from git bash only..,
 
-��������Git
-1������Path������װGitĿ¼��bin���ӵ�path
-2�������û��������䣺
-	1)�Ҽ�->git bush Here
-	2)���룺git config --global user.name "joson"
-	3)���룺git config --global user.email "josonyuu@163.com"
-3.�鿴�Ƿ����óɹ���C:\Users\���û�����\.gitconfig,���������һ��.gitconfig�ļ�
+三、配置Git
+1、配置Path，将安装Git目录的bin添加到path
+2、配置用户名和邮箱：
+	1)右键->git bush Here
+	2)输入：git config --global user.name "joson"
+	3)输入：git config --global user.email "josonyuu@163.com"
+3.查看是否配置成功：C:\Users\（用户名）\.gitconfig,里面会生成一个.gitconfig文件
 
-�ġ��GitԶ�ֿ̲⣨����������https://github.com/
-����������SSH�����ܵ�¼��
-1����������SSH��
-	1)��git bush Here�������룺ssh-keygen -t rsa -C josonyu@163.com
-	2)һֱ�س�
-2��Զ�����ã�
-	1)��¼��ѡ��->settings->SSH and GPG keys->
-	2)title:������д
-	3)�����أ�C:\Users\���û�����\.ssh�����ɵ�id_rsa.pub���ݸ���һ�ݸ���Git��Key
-3�������Ƿ����óɹ���ssh -T git@github.com 
-4���ɹ�����successful
+四、搭建Git远程仓库（服务器）：https://github.com/
+☆首先配置SSH（免密登录）
+1、本地配置SSH：
+	1)在git bush Here里面输入：ssh-keygen -t rsa -C josonyuu@163.com
+	2)一直回车
+2、远程配置：
+	1)登录后选择：->settings->SSH and GPG keys->
+	2)title:任意填写
+	3)将本地（C:\Users\（用户名）\.ssh）生成的id_rsa.pub内容复制一份给（Git）Key
+3、测试是否配置成功：ssh -T git@github.com 
+4、成功会有successful
 
-�塢�״���ͨgit��Ŀ
-1���ڱ��ؽ���Git��Ŀ������Ŀ��Ŀ¼��->�Ҽ�-> git bush here ->���룺git init
-2����Զ�̽���Git��Ŀ:new->������Ŀ->���� ��¼��ĿΨһ��ʶ��git@github.com:joson-yu/MyFristGit.git
-3���ڱ���git bush here�����룺git remote add origin git@github.com:joson-yu/MyFristGit.git
-4��github�鿴��Ŀ����
+五、首次连通git项目
+1、在本地建立Git项目：在项目根目录下->右键-> git bush here ->输入：git init
+2、在远程建立Git项目:new->建立项目->生成 记录项目唯一标识：git@github.com:joson-yu/MyFristGit.git
+3、在本地git bush here中输入：git remote add origin git@github.com:joson-yu/MyFristGit.git
+4、github查看项目即可
 
-����������Ŀ��
-�ļ�������Ҫ�����������ļ�--�ļ�������--���ط�֧��Ĭ��master��---------Զ�̷�֧��Ĭ��master��
-git add . 			(�ļ���������
-git commit -m"ע������"		(���ط�֧)
-git push -u origin master       (�Ƶ�Զ�̷�֧����һ����-u �Ժ���Ҫ-u��
+六、发布项目：
+文件发布需要经过：本地文件--文件缓存区--本地分支（默认master）---------远程分支（默认master）
+git add . 			(文件缓存区）
+git commit -m"注释内容"		(本地分支)
+git push -u origin master       (推到远程分支，第一次有-u 以后不需要-u）
 
-�ߡ�������Ŀ
+七、下载项目
 git clone git@github.com:joson-yu/MyFristGit.git
 
-�ˡ��ύ��Ŀ
-git add . 			(�ļ���������
-git commit -m"ע������"		(���ط�֧)
-git push origin master       (�Ƶ�Զ�̷�֧��
+八、提交项目
+git add . 			(文件缓存区）
+git commit -m"注释内容"		(本地分支)
+git push origin master       (推到远程分支）
 
-�š�������Ŀ��Զ�̸��£��������أ�
+九、更新项目（远程更新，本地下载）
 git pull
 
-ʮ����eclipse��ʹ�õ�ע������
-һ��eclipse��֧��git��eclipse�н�Egit��
-1������git��ǰ�����úã�һ��eclipseĬ����ã���
-	1)team-git-configuration -���� �û���
-	2)general -network -ssh2ѡ�� ���ɵ�sshĿ¼
+十、在eclipse中使用的注意事项
+一般eclipse都支持git（eclipse中叫Egit）
+1、配置git（前面配置好，一般eclipse默认配好）：
+	1)team-git-configuration -邮箱 用户名
+	2)general -network -ssh2选中 生成的ssh目录
 
-2��������Ŀ��
+2、发布项目：
 	1)share project
 	2)add to index 
 	3)commit
-	4)�Ҽ�->team->remote -push
+	4)右键->team->remote -push
 
-3���ύ��
+3、提交：
 	1)team->add to index
 	2)team->commit
 	3)team->push
-4��ע��
-	commit�����ܵ�����Pushĳһ���ļ���ֻ��Push������Ŀ
-	commit and push������ ����Pushĳһ���ļ�
+4、注意
+	commit：不能单独的Push某一个文件，只能Push整个项目
+	commit and push：可以 单独Push某一个文件
 
-5��������Ŀ��import -clone -���� https/ssh��Ψһ��ʾ��
+5、下载项目：import -clone -输入 https/ssh的唯一标示符
 
-6��������Ŀ��team - remote -pull
+6、更新项目：team - remote -pull
 
----------------------------------���--------------------------------------------
-git��ͻ�����
-	1)���ֳ�ͻ������ͬ����ͼ->�Ҽ�->team-> synchronized...
-	2)׼����add to index
+---------------------------------最后--------------------------------------------
+git冲突解决：
+	1)发现冲突：进入同步视图->右键->team-> synchronized...
+	2)准备：add to index
 		commit
 		pull
-	3)�޸ĳ�ͻ:merge tool ��ֱ���޸�
-	4���޸ĺ� add to index
+	3)修改冲突:merge tool 或直接修改
+	4）修改后： add to index
 		    commit
 		    push
 
-�Ŷ�Э����
-	1)github��->settings->Collaborators:��������ߵ�githubȫ��������
+团队协作：
+	1)github中->settings->Collaborators:加入合作者的github全名或邮箱
 
-�����������Ӻ�����飺 �򿪸����ӡ��������� :��������....clone��Ŀ���޸ġ�add \commit\push
+发送邀请链接合作伙伴： 打开该链接、接受邀请 :合作开发....clone项目、修改、add \commit\push
 
 
----------------------------------����--------------------------------------------
+---------------------------------结束--------------------------------------------
 	
 
 
